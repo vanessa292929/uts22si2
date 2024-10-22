@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TprioritasResource\Pages;
-use App\Models\Prioritas;
+use App\Models\tprioritas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,7 +14,7 @@ use Filament\Forms\Components\TextInput;
 
 class TprioritasResource extends Resource
 {
-    protected static ?string $model = Prioritas::class;
+    protected static ?string $model = tprioritas::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

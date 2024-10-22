@@ -13,4 +13,7 @@ class tprioritas extends Model
         'kode_prioritas', 
         'nama_prioritas'
     ];
+
+    protected $primaryKey = 'kode_prioritas';
+    public $incrementing = false;
 }

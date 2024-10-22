@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpengadaanbahanbakuResource\Pages;
-use App\Models\PengadaanBahanBaku;
+use App\Models\tpengadaanBahanBaku;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,7 +15,7 @@ use Filament\Forms\Components\Select;
 
 class TpengadaanbahanbakuResource extends Resource
 {
-    protected static ?string $model = PengadaanBahanBaku::class;
+    protected static ?string $model = tpengadaanBahanBaku::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

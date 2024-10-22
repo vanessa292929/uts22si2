@@ -18,4 +18,7 @@ class tpengadaanbahanbaku extends Model
         'kode_prioritas', 
         'kode_pegawai'
     ];
+
+    protected $primaryKey = 'kode_pengadaan_bahan_baku';
+    public $incrementing = false;
 }

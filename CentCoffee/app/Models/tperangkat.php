@@ -16,4 +16,7 @@ class tperangkat extends Model
         'jumlah_kursi_perangkat', 
         'status_perangkat'
     ];
+
+    protected $primaryKey = 'kode_perangkat';
+    public $incrementing = false;
 }

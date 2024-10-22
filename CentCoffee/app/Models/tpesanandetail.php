@@ -16,4 +16,7 @@ class tpesanandetail extends Model
         'kode_pesanan', 
         'kode_menu'
     ];
+
+    protected $primaryKey = 'kode_pesanan_detil';
+    public $incrementing = false;
 }
