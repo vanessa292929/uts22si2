@@ -17,6 +17,11 @@ class ThalamanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getPluralModelLabel(): string
+    {
+        return 'Halaman'; 
+    }
+
     public static function form(Form $form): Form
     {
         return $form

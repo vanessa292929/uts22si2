@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TmenuResource\Pages;
-use App\Models\Menu;
+use App\Models\tmenu;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
@@ -13,9 +13,14 @@ use Filament\Tables\Columns\TextColumn;
 
 class TmenuResource extends Resource
 {
-    protected static ?string $model = Menu::class;
+    protected static ?string $model = tmenu::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Menu'; 
+    }
 
     public static function form(Form $form): Form
     {

@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TkuesionerResource\Pages;
-use App\Models\Kuesioner;
+use App\Models\tkuesioner;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,8 +14,13 @@ use Filament\Forms\Components\TextInput;
 
 class TkuesionerResource extends Resource
 {
-    protected static ?string $model = Kuesioner::class;
+    protected static ?string $model = tkuesioner::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Kuesioner'; 
+    }
 
     public static function form(Form $form): Form
     {
