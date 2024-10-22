@@ -11,7 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables\Columns\TextColumn;
 
-class ThalamenResource extends Resource
+class ThalamanResource extends Resource
 {
     protected static ?string $model = Halaman::class;
 

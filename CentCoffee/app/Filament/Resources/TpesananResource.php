@@ -13,7 +13,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 
-class PesananResource extends Resource
+class TpesananResource extends Resource
 {
     protected static ?string $model = Pesanan::class;
     protected static ?string $navigationIcon = 'heroicon-o-collection';

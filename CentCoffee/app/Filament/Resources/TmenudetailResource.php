@@ -12,7 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 
-class MenuDetailResource extends Resource
+class TmenudetailResource extends Resource
 {
     protected static ?string $model = MenuDetail::class;
     protected static ?string $navigationIcon = 'heroicon-o-collection';
