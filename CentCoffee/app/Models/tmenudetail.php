@@ -15,4 +15,7 @@ class tmenudetail extends Model
         'kode_menu', 
         'kode_bahan_baku'
     ];
+
+    protected $primaryKey = 'kode_menu_detail';
+    public $incrementing = false;
 }

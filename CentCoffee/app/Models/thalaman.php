@@ -10,10 +10,12 @@ class thalaman extends Model
     use HasFactory;
     
     protected $fillable = [
-        'kode_bahan_baku', 
-        'nama_bahan_baku', 
-        'stok_bahan_baku', 
-        'satuan_bahan_baku', 
-        'tanggal_kadaluarsa_bahan_baku'
+        'kode_halaman', 
+        'nama_halaman', 
+        'ikon_halaman', 
+        'urutan_halaman', 
     ];
+
+    protected $primaryKey = 'kode_halaman';
+    public $incrementing = false;
 }

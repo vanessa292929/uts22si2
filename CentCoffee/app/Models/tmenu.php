@@ -17,5 +17,8 @@ class tmenu extends Model
         'deskripsi_menu', 
         'gambar_menu', 
         'kode_pegawai'
+        
     ];
+    protected $primaryKey = 'kode_menu';
+    public $incrementing = false;
 }

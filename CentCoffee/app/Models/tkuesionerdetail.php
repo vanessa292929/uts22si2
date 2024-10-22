@@ -15,4 +15,7 @@ class tkuesionerdetail extends Model
         'kode_kuesioner_perangkat', 
         'kode_kuesioner'
     ];
+
+    protected $primaryKey = 'kode_kuesioner_detail';
+    public $incrementing = false;
 }

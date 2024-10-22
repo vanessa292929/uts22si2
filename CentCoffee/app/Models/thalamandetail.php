@@ -10,4 +10,6 @@ class thalamandetail extends Model
     use HasFactory;
     protected $fillable = ['kode_halaman_detail','kode_otoritas','kode_halaman','status_halaman_detail']; 
 
+    protected $primaryKey = 'kode_halam_detail';
+    public $incrementing = false;
 }

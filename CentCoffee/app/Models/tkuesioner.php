@@ -18,4 +18,7 @@ class tkuesioner extends Model
         'status_kuesioner', 
         'kode_pegawai'
     ];
+
+    protected $primaryKey = 'kode_kuesioner';
+    public $incrementing = false;
 }
