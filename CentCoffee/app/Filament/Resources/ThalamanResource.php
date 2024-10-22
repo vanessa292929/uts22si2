@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ThalamenResource\Pages;
-use App\Models\Halaman;
+use App\Models\Thalaman;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
@@ -13,9 +13,9 @@ use Filament\Tables\Columns\TextColumn;
 
 class ThalamanResource extends Resource
 {
-    protected static ?string $model = Halaman::class;
+    protected static ?string $model = Thalaman::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

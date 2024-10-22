@@ -15,7 +15,7 @@ use Filament\Forms\Components\TextInput;
 class TkuesionerperangkatResource extends Resource
 {
     protected static ?string $model = KuesionerPerangkat::class;
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

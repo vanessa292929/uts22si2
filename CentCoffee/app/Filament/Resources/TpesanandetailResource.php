@@ -16,7 +16,7 @@ use Filament\Forms\Components\Select;
 class TpesanandetailResource extends Resource
 {
     protected static ?string $model = PesananDetail::class;
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

@@ -15,7 +15,7 @@ use Filament\Forms\Components\TextInput;
 class TotoritasResource extends Resource
 {
     protected static ?string $model = Otoritas::class;
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

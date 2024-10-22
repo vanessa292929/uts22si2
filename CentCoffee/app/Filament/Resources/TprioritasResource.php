@@ -15,7 +15,7 @@ use Filament\Forms\Components\TextInput;
 class TprioritasResource extends Resource
 {
     protected static ?string $model = Prioritas::class;
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {

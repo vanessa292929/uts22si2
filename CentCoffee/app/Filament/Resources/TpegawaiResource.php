@@ -16,7 +16,7 @@ use Filament\Forms\Components\Select;
 class TpegawaiResource extends Resource
 {
     protected static ?string $model = Pegawai::class;
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
