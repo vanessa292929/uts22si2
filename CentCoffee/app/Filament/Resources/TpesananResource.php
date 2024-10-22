@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PesananResource\Pages;
+use App\Filament\Resources\TpesananResource\Pages;
 use App\Models\Pesanan;
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
@@ -69,9 +69,9 @@ class TpesananResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPesanan::route('/'),
-            'create' => Pages\CreatePesanan::route('/create'),
-            'edit' => Pages\EditPesanan::route('/{record}/edit'),
+            'index' => Pages\ListTpesanan::route('/'),
+            'create' => Pages\CreateTpesanan::route('/create'),
+            'edit' => Pages\EditTpesanan::route('/{record}/edit'),
         ];
     }
 }

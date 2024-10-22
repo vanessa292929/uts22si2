@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PegawaiResource\Pages;
+use App\Filament\Resources\TpegawaiResource\Pages;
 use App\Models\Pegawai;
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
@@ -58,9 +58,9 @@ class TpegawaiResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPegawai::route('/'),
-            'create' => Pages\CreatePegawai::route('/create'),
-            'edit' => Pages\EditPegawai::route('/{record}/edit'),
+            'index' => Pages\ListTpegawai::route('/'),
+            'create' => Pages\CreateTpegawai::route('/create'),
+            'edit' => Pages\EditTpegawai::route('/{record}/edit'),
         ];
     }
 }

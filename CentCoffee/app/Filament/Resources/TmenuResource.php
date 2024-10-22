@@ -6,9 +6,9 @@ use App\Filament\Resources\TmenuResource\Pages;
 use App\Models\Menu;
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
 class TmenuResource extends Resource

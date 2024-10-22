@@ -3,17 +3,20 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TbahanbakuResource\Pages;
-use App\Models\BahanBaku;
+use App\Filament\Resources\TransactionDetailResource\RelationManagers;
+use App\Models\tbahanbaku;
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TbahanbakuResource extends Resource
 {
-    protected static ?string $model = BahanBaku::class;
+    protected static ?string $model = tbahanbaku::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 

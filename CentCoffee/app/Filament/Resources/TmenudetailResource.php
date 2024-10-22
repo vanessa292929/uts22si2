@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MenuDetailResource\Pages;
+use App\Filament\Resources\TmenudetailResource\Pages;
 use App\Models\MenuDetail;
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 
@@ -49,9 +49,9 @@ class TmenudetailResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMenuDetail::route('/'),
-            'create' => Pages\CreateMenuDetail::route('/create'),
-            'edit' => Pages\EditMenuDetail::route('/{record}/edit'),
+            'index' => Pages\ListTmenudetail::route('/'),
+            'create' => Pages\CreateTmenudetail::route('/create'),
+            'edit' => Pages\EditTmenudetail::route('/{record}/edit'),
         ];
     }
 }

@@ -6,9 +6,9 @@ use App\Filament\Resources\ThalamenResource\Pages;
 use App\Models\Halaman;
 use Filament\Forms;
 use Filament\Tables;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
+use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 
 class ThalamanResource extends Resource
@@ -54,9 +54,9 @@ class ThalamanResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListThalamen::route('/'),
-            'create' => Pages\CreateThalamen::route('/create'),
-            'edit' => Pages\EditThalamen::route('/{record}/edit'),
+            'index' => ThalamanResource\Pages\ListThalaman::route('/'),
+            'create' => ThalamanResource\Pages\CreateThalaman::route('/create'),
+            'edit' => ThalamanResource\Pages\EditThalaman::route('/{record}/edit'),
         ];
     }
 }
