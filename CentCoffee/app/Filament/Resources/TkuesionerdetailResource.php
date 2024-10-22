@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TkuesionerdetailResource\Pages;
-use App\Models\KuesionerDetail;
+use App\Models\tkuesionerDetail;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,8 +14,18 @@ use Filament\Forms\Components\TextInput;
 
 class TkuesionerdetailResource extends Resource
 {
-    protected static ?string $model = KuesionerDetail::class;
+    protected static ?string $model = tkuesionerDetail::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    public static function getModelLabel(): string
+    {
+        return 'Kuesioner Detail'; 
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Kuesioner Detail'; 
+    }
 
     public static function form(Form $form): Form
     {

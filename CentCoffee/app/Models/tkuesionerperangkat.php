@@ -18,4 +18,7 @@ class tkuesionerperangkat extends Model
         'status_kuesioner_perangkat', 
         'kode_perangkat'
     ];
+
+    protected $primaryKey = 'kode_kuesioner_perangkat';
+    public $incrementing = false;
 }
