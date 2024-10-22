@@ -16,4 +16,7 @@ class tpegawai extends Model
         'jenis_kelamin', 
         'kode_otoritas'
     ];
+
+    protected $primaryKey = 'kode_pegawai';
+    public $incrementing = false;
 }

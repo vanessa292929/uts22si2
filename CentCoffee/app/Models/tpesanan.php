@@ -19,4 +19,7 @@ class tpesanan extends Model
         'kode_pegawai', 
         'kode_perangkat'
     ];
+
+    protected $primaryKey = 'kode_pesanan';
+    public $incrementing = false;
 }

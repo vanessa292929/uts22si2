@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpemberitahuanResource\Pages;
-use App\Models\Pemberitahuan;
+use App\Models\tpemberitahuan;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,7 +14,7 @@ use Filament\Forms\Components\TextInput;
 
 class TpemberitahuanResource extends Resource
 {
-    protected static ?string $model = Pemberitahuan::class;
+    protected static ?string $model = tpemberitahuan::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

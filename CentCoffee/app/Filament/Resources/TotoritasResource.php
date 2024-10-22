@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TotoritasResource\Pages;
-use App\Models\Otoritas;
+use App\Models\totoritas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,7 +14,7 @@ use Filament\Forms\Components\TextInput;
 
 class TotoritasResource extends Resource
 {
-    protected static ?string $model = Otoritas::class;
+    protected static ?string $model = totoritas::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

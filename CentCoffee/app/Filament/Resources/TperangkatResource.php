@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TperangkatResource\Pages;
-use App\Models\Perangkat;
+use App\Models\tperangkat;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -14,7 +14,7 @@ use Filament\Forms\Components\TextInput;
 
 class TperangkatResource extends Resource
 {
-    protected static ?string $model = Perangkat::class;
+    protected static ?string $model = tperangkat::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

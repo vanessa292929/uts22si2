@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpesanandetailResource\Pages;
-use App\Models\PesananDetail;
+use App\Models\tpesananDetail;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
@@ -15,7 +15,7 @@ use Filament\Forms\Components\Select;
 
 class TpesanandetailResource extends Resource
 {
-    protected static ?string $model = PesananDetail::class;
+    protected static ?string $model = tpesananDetail::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

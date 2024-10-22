@@ -13,4 +13,7 @@ class totoritas extends Model
         'kode_otoritas', 
         'nama_otoritas'
     ];
+
+    protected $primaryKey = 'kode_otoritas';
+    public $incrementing = false;
 }

@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpegawaiResource\Pages;
-use App\Models\Pegawai;
+use App\Models\tpegawai;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
@@ -15,7 +15,7 @@ use Filament\Forms\Components\Select;
 
 class TpegawaiResource extends Resource
 {
-    protected static ?string $model = Pegawai::class;
+    protected static ?string $model = tpegawai::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

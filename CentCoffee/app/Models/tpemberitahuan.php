@@ -15,4 +15,7 @@ class tpemberitahuan extends Model
         'tanggal_pemberitahuan', 
         'kode_pengingat'
     ];
+
+    protected $primaryKey = 'kode_pemberitahuan';
+    public $incrementing = false;
 }
