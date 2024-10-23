@@ -17,6 +17,8 @@ class TmenuResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    
+
     public static function getPluralModelLabel(): string
     {
         return 'Menu'; 

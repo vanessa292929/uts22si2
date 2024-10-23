@@ -17,6 +17,16 @@ class TperangkatResource extends Resource
     protected static ?string $model = tperangkat::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Perangkat]';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Perangkat';
+    }
+
     public static function form(Form $form): Form
     {
         return $form->schema([

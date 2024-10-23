@@ -18,6 +18,16 @@ class TpesananResource extends Resource
     protected static ?string $model = tpesanan::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Pesanan';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Pesanan';
+    }
+
     public static function form(Form $form): Form
     {
         return $form

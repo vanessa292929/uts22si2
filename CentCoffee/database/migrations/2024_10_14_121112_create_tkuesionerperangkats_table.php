@@ -1,5 +1,6 @@
 <?php
-
+//DUPLICATE, CORRECT ONE IS 070749
+//fILE INI HARUS DIDELETE!!!
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->time('waktu_kuesioner_perangkat');
             $table->tinyInteger('status_kuesioner_perangkat');
             $table->string('kode_perangkat', 15);
-            $table->timestamps();
+            
         });
     }
 

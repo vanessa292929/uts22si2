@@ -18,6 +18,16 @@ class TpegawaiResource extends Resource
     protected static ?string $model = tpegawai::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Pegawai';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Pegawai';
+    }
+
     public static function form(Form $form): Form
     {
         return $form

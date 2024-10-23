@@ -17,6 +17,16 @@ class TpemberitahuanResource extends Resource
     protected static ?string $model = tpemberitahuan::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Pemberitahuan';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Pemberitahuan';
+    }
+
     public static function form(Form $form): Form
     {
         return $form->schema([

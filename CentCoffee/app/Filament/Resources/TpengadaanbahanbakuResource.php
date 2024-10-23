@@ -18,6 +18,16 @@ class TpengadaanbahanbakuResource extends Resource
     protected static ?string $model = tpengadaanBahanBaku::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Pengadaan Bahan Baku';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Pengadaan Bahan Baku';
+    }
+
     public static function form(Form $form): Form
     {
         return $form->schema([

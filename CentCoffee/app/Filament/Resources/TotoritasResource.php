@@ -17,6 +17,16 @@ class TotoritasResource extends Resource
     protected static ?string $model = totoritas::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Otoritas';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Otoritas';
+    }
+
     public static function form(Form $form): Form
     {
         return $form->schema([

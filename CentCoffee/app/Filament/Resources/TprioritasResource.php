@@ -17,6 +17,16 @@ class TprioritasResource extends Resource
     protected static ?string $model = tprioritas::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Prioritas';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Prioritas';
+    }
+
     public static function form(Form $form): Form
     {
         return $form->schema([
