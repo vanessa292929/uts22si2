@@ -2,20 +2,42 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
-use Illuminate\Support\Facades\DB;
+use App\Models\totoritas; // Assuming you have this model
 
 class TotoritasSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        $faker = Faker::create('id_ID');
-        for ($i = 1; $i <= 10; $i++) {
-            DB::table('otoritas')->insert([
-                'kode_otoritas' => $faker->unique()->numerify('OT###'),
-                'nama_otoritas' => $faker->word(),
-            ]);
+        $otoritasData = [
+            [
+                'kode_otoritas' => 'OT001',
+                'nama_otoritas' => 'Administrator',
+            ],
+            [
+                'kode_otoritas' => 'OT002',
+                'nama_otoritas' => 'Manajer',
+            ],
+            [
+                'kode_otoritas' => 'OT003',
+                'nama_otoritas' => 'Kasir',
+            ],
+            [
+                'kode_otoritas' => 'OT004',
+                'nama_otoritas' => 'Koki',
+            ],
+            [
+                'kode_otoritas' => 'OT005',
+                'nama_otoritas' => 'Pelayan',
+            ],
+        ];
+
+        foreach ($otoritasData as $otoritas) {
+            Totoritas::create($otoritas);
         }
     }
 }
