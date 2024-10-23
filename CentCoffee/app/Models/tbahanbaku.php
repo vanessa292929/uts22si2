@@ -12,4 +12,5 @@ class tbahanbaku extends Model
 
     protected $primaryKey = 'kode_bahan_baku';
     public $incrementing = false;
+    public $timestamps = false;
 }
