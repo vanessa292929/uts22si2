@@ -30,13 +30,13 @@ class TpemberitahuanResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TextInput::make('kode_pemberitahuan')
+            Forms\Components\TextInput::make('kode_pemberitahuan')
                 ->required()
                 ->label('Kode Pemberitahuan'),
-            TextInput::make('isi_pemberitahuan')
+                Forms\Components\TextInput::make('isi_pemberitahuan')
                 ->required()
                 ->label('Isi Pemberitahuan'),
-            TextInput::make('kode_pengingat')
+                Forms\Components\TextInput::make('kode_pengingat')
                 ->required()
                 ->label('Kode Pengingat'),
         ]);
@@ -45,9 +45,9 @@ class TpemberitahuanResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('kode_pemberitahuan')->sortable()->searchable(),
-            TextColumn::make('isi_pemberitahuan')->sortable()->searchable(),
-            TextColumn::make('kode_pengingat')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pemberitahuan')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('isi_pemberitahuan')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pengingat')->sortable()->searchable(),
         ]);
     }
 

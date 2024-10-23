@@ -49,10 +49,10 @@ class ThalamanResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('kode_halaman')->sortable()->searchable(),
-                TextColumn::make('nama_halaman')->sortable()->searchable(),
-                TextColumn::make('ikon_halaman')->sortable()->searchable(),
-                TextColumn::make('urutan_halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nama_halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('ikon_halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('urutan_halaman')->sortable()->searchable(),
             ]);
     }
 

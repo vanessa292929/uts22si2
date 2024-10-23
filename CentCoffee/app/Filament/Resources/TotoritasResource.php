@@ -30,10 +30,10 @@ class TotoritasResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TextInput::make('kode_otoritas')
+            Forms\Components\TextInput::make('kode_otoritas')
                 ->required()
                 ->label('Kode Otoritas'),
-            TextInput::make('nama_otoritas')
+                Forms\Components\TextInput::make('nama_otoritas')
                 ->required()
                 ->label('Nama Otoritas'),
         ]);
@@ -42,8 +42,8 @@ class TotoritasResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('kode_otoritas')->sortable()->searchable(),
-            TextColumn::make('nama_otoritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_otoritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('nama_otoritas')->sortable()->searchable(),
         ]);
     }
 

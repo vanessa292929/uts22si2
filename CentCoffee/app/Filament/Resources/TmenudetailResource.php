@@ -25,14 +25,14 @@ class TmenudetailResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('kode_menu_detail')
+                Forms\Components\TextInput::make('kode_menu_detail')
                     ->required(),
-                TextInput::make('jumlah_bahan_baku_detail')
+                    Forms\Components\TextInput::make('jumlah_bahan_baku_detail')
                     ->required()
                     ->numeric(),
-                TextInput::make('kode_menu')
+                    Forms\Components\TextInput::make('kode_menu')
                     ->required(),
-                TextInput::make('kode_bahan_baku')
+                    Forms\Components\TextInput::make('kode_bahan_baku')
                     ->required()
                     ->maxLength(15),
             ]);
@@ -42,10 +42,10 @@ class TmenudetailResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('kode_menu_detail')->sortable()->searchable(),
-                TextColumn::make('jumlah_bahan_baku_detail')->sortable()->searchable(),
-                TextColumn::make('kode_menu')->sortable()->searchable(),
-                TextColumn::make('kode_bahan_baku')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_menu_detail')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('jumlah_bahan_baku_detail')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_bahan_baku')->sortable()->searchable(),
             ])
             ->filters([]);
     }

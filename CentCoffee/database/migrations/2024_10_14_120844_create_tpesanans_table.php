@@ -12,14 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tpesanans', function (Blueprint $table) {
-            $table->string('kode_pesanan', 15);
+            $table->char('kode_pesanan', 15)->primary();
             $table->date('tanggal_pesanan');
             $table->time('waktu_pesanan');
-            $table->string('pembeli_pesanan', 50);
+            $table->char('pembeli_pesanan', 50);
             $table->text('catatan_pesanan');
+            $table->integer('harga_pesanan');
+            $table->integer('tunai_pesananan');
             $table->enum('status_pesanan', ['C', 'P', 'T', 'D']);
-            $table->string('kode_pegawai', 15);
-            $table->string('kode_perangkat', 15);
+            $table->char('kode_pegawai', 15);
+            $table->char('kode_perangkat', 15);
 
             $table->foreign('kode_pegawai')->references('kode_pegawai')->on('tpegawais');
             $table->foreign('kode_perangkat')->references('kode_perangkat')->on('tperangkats');

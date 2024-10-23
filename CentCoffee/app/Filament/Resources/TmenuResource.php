@@ -56,11 +56,12 @@ class TmenuResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('kode_menu')->sortable()->searchable(),
-                TextColumn::make('nama_menu')->sortable()->searchable(),
-                TextColumn::make('jenis_menu')->sortable()->searchable(),
-                TextColumn::make('harga_menu')->sortable()->searchable(),
-                TextColumn::make('deskripsi_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nama_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('jenis_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('harga_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi_menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
             ]);
     }
 

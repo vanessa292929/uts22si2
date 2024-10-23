@@ -9,7 +9,7 @@ class tpemberitahuan extends Model
 {
     use HasFactory;
 
-    public $timestamps = false
+    public $timestamps = false;
     
     protected $fillable = [
         'kode_pemberitahuan', 

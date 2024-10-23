@@ -21,4 +21,5 @@ class tkuesioner extends Model
 
     protected $primaryKey = 'kode_kuesioner';
     public $incrementing = false;
+    public $timestamps = false;
 }

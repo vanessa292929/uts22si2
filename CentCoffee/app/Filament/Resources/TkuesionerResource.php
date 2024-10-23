@@ -11,6 +11,8 @@ use Filament\Tables\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\TimePicker;
+use Filament\Forms\Components\DatePicker;
 
 class TkuesionerResource extends Resource
 {
@@ -25,16 +27,33 @@ class TkuesionerResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TextInput::make('kode_kuesioner')
+            Forms\Components\TextInput::make('kode_kuisoner')
                 ->required()
                 ->label('Kode Kuesioner'),
-            TextInput::make('judul_kuesioner')
+
+                Forms\Components\TextInput::make('judul_kuisioner')
                 ->required()
                 ->label('Judul Kuesioner'),
-            TextInput::make('isi_kuesioner')
+
+                Forms\Components\TextInput::make('isi_kuisioner')
                 ->required()
                 ->label('Isi Kuesioner'),
-            TextInput::make('kode_pegawai')
+            
+           Forms\Components\DatePicker::make('tanggal_kuisioner')
+                ->required()
+                ->label('Tanggal Kuesioner')
+                ->displayFormat('d/m/Y'),
+
+                Forms\Components\TimePicker::make('waktu_kuisioner')
+                ->required()
+                ->label('Waktu Kuesioner')
+                ->displayFormat('h:i A'),
+
+                Forms\Components\TextInput::make('status_kuisioner')
+                ->required()
+                ->label('Status Kuesioner'),
+
+                Forms\Components\TextInput::make('kode_pegawai')
                 ->required()
                 ->label('Kode Pegawai'),
         ]);
@@ -43,10 +62,13 @@ class TkuesionerResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('kode_kuesioner')->sortable()->searchable(),
-            TextColumn::make('judul_kuesioner')->sortable()->searchable(),
-            TextColumn::make('isi_kuesioner')->sortable()->searchable(),
-            TextColumn::make('kode_pegawai')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('judul_kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('isi_kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('tanggal_kuisioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('waktu_kuisioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('status_kuisioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
         ]);
     }
 

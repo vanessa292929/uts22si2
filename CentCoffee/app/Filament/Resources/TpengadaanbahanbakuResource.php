@@ -12,6 +12,9 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\TimePicker;
+
 
 class TpengadaanbahanbakuResource extends Resource
 {
@@ -31,23 +34,40 @@ class TpengadaanbahanbakuResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TextInput::make('kode_pengadaan_bahan_baku')
+            Forms\Components\TextInput::make('kode_pengadaan_bahan_baku')
                 ->required()
                 ->label('Kode Pengadaan'),
-            TextInput::make('subjek_pengadaan_bahan_baku')
+
+                Forms\Components\TextInput::make('subjek_pengadaan_bahan_baku')
                 ->required()
                 ->label('Subjek'),
-            Select::make('status_pengadaan_bahan_baku')
+
+                Forms\Components\DateTimePicker::make('tanggal_pengadaan_bahan_baku')
+                ->required()
+                ->label('Tanggal Pengadaan Bahan Baku')
+                ->displayFormat('d/m/Y'),
+
+                Forms\Components\TimePicker::make('waktu_pengadaan_bahan_baku')
+                ->required()
+                ->label('Waktu Pengadaan Bahan Baku')
+                ->displayFormat('H:i'),
+
+                Forms\Components\TextInput::make('catatan_pengadaan_bahan_baku')
+                ->required()
+                ->label('catatan Pengadaan Bahan Baku'),
+
+                Forms\Components\Select::make('status_pengadaan_bahan_baku')
                 ->required()
                 ->options([
                     'Pending' => 'Pending',
                     'Selesai' => 'Selesai',
                 ])
                 ->label('Status'),
-            TextInput::make('kode_prioritas')
+
+                Forms\Components\TextInput::make('kode_prioritas')
                 ->required()
                 ->label('Kode Prioritas'),
-            TextInput::make('kode_pegawai')
+                Forms\Components\TextInput::make('kode_pegawai')
                 ->required()
                 ->label('Kode Pegawai'),
         ]);
@@ -56,11 +76,14 @@ class TpengadaanbahanbakuResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('kode_pengadaan_bahan_baku')->sortable()->searchable(),
-            TextColumn::make('subjek_pengadaan_bahan_baku')->sortable()->searchable(),
-            TextColumn::make('status_pengadaan_bahan_baku')->sortable()->searchable(),
-            TextColumn::make('kode_prioritas')->sortable()->searchable(),
-            TextColumn::make('kode_pegawai')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pengadaan_bahan_baku')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('subjek_pengadaan_bahan_baku')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('tanggal_pengadaan_bahan_baku')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('waktu_pengadaan_bahan_baku')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('catatan_pengadaan_bahan_baku')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('status_pengadaan_bahan_baku')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_prioritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
         ]);
     }
 

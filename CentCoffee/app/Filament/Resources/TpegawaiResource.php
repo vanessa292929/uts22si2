@@ -32,22 +32,22 @@ class TpegawaiResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('kode_pegawai')
+                Forms\Components\TextInput::make('kode_pegawai')
                     ->required()
                     ->maxLength(15),
-                TextInput::make('kata_sandi')
+                    Forms\Components\TextInput::make('kata_sandi')
                     ->required()
                     ->maxLength(100),
-                TextInput::make('nama_pegawai')
+                    Forms\Components\TextInput::make('nama_pegawai')
                     ->required()
                     ->maxLength(50),
-                Select::make('jenis_kelamin')
+                    Forms\Components\Select::make('jenis_kelamin_pegawai')
                     ->options([
                         'L' => 'Laki-laki',
                         'P' => 'Perempuan',
                     ])
                     ->required(),
-                TextInput::make('kode_otoritas')
+                    Forms\Components\TextInput::make('kode_otoritas')
                     ->required()
                     ->maxLength(15),
             ]);
@@ -57,10 +57,11 @@ class TpegawaiResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('kode_pegawai')->sortable()->searchable(),
-                TextColumn::make('nama_pegawai')->sortable()->searchable(),
-                TextColumn::make('jenis_kelamin')->sortable()->searchable(),
-                TextColumn::make('kode_otoritas')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nama_pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kata_sandi')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('jenis_kelamin_pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_otoritas')->sortable()->searchable(),
             ])
             ->filters([]);
     }

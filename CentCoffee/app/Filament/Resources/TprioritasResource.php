@@ -30,10 +30,10 @@ class TprioritasResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            TextInput::make('kode_prioritas')
+            Forms\Components\TextInput::make('kode_prioritas')
                 ->required()
                 ->label('Kode Prioritas'),
-            TextInput::make('nama_prioritas')
+                Forms\Components\TextInput::make('nama_prioritas')
                 ->required()
                 ->label('Nama Prioritas'),
         ]);
@@ -42,8 +42,8 @@ class TprioritasResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            TextColumn::make('kode_prioritas')->sortable()->searchable(),
-            TextColumn::make('nama_prioritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_prioritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('nama_prioritas')->sortable()->searchable(),
         ]);
     }
 

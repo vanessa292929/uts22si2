@@ -13,7 +13,7 @@ class tpegawai extends Model
         'kode_pegawai', 
         'kata_sandi', 
         'nama_pegawai', 
-        'jenis_kelamin', 
+        'jenis_kelamin_pegawai', 
         'kode_otoritas'
     ];
 

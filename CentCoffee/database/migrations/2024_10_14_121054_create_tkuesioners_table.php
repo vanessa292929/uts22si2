@@ -12,14 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tkuesioners', function (Blueprint $table) {
-            $table->string('kode_kuisioner', 15);
-            $table->string('judul_kuesioner', 50);
-            $table->text('isi_kuesioner');
-            $table->date('tanggal_kuesioner');
-            $table->time('waktu_kuesioner');
-            $table->boolean('status_kuesioner');
-            $table->string('kode_pegawai', 15);
-            $table->timestamps();
+            $table->char('kode_kuisioner', 15);
+            $table->char('judul_kuisioner', 50);
+            $table->text('isi_kuisioner');
+            $table->date('tanggal_kuisioner');
+            $table->time('waktu_kuisioner');
+            $table->boolean('status_kuisioner');
+            $table->char('kode_pegawai', 15);
+
+
+            $table->foreign('kode_pegawai')->references('kode_pegawai')->on('tpegawais');
 
         });
     }

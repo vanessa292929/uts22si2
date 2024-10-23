@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('thalamans', function (Blueprint $table) {
-            $table->string('kode_halaman', 15);
-            $table->string('nama_halaman', 50);
-            $table->string('ikon_halaman', 25);
+            $table->char('kode_halaman', 15)->primary();
+            $table->char('nama_halaman', 50);
+            $table->char('ikon_halaman', 25);
             $table->tinyInteger('urutan_halaman', false, true)->length(2);
+            $table->timestamps();
         });
     }
 

@@ -15,6 +15,8 @@ class tpesanan extends Model
         'waktu_pesanan', 
         'pembeli_pesanan', 
         'catatan_pesanan', 
+        'harga_pesanan',
+        'tunai_pesanan',
         'status_pesanan', 
         'kode_pegawai', 
         'kode_perangkat'
@@ -22,4 +24,5 @@ class tpesanan extends Model
 
     protected $primaryKey = 'kode_pesanan';
     public $incrementing = false;
+    public $timestamps = false;
 }

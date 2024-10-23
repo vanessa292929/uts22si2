@@ -32,20 +32,26 @@ class TpesananResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('kode_pesanan')
+                Forms\Components\TextInput::make('kode_pesanan')
                     ->required(),
-                TextInput::make('tanggal_pesanan')
+                    Forms\Components\DatePicker::make('tanggal_pesanan')
                     ->required()
-                    ->date(),
-                TextInput::make('waktu_pesanan')
+                    ->displayFormat('d/m/Y'),
+                    Forms\Components\TimePicker::make('waktu_pesanan')
                     ->required()
-                    ->time(),
-                TextInput::make('pembeli_pesanan')
+                    ->displayFormat('h:i A'),
+                    Forms\Components\TextInput::make('pembeli_pesanan')
                     ->required()
                     ->maxLength(50),
-                TextInput::make('catatan_pesanan')
+                    Forms\Components\TextInput::make('catatan_pesanan')
                     ->nullable(),
-                Select::make('status_pesanan')
+                    Forms\Components\TextInput::make('harga_pesanan')
+                    ->required()
+                    ->maxLength(50),
+                    Forms\Components\TextInput::make('tunai_pesanan')
+                    ->required()
+                    ->maxLength(50),
+                    Forms\Components\Select::make('status_pesanan')
                     ->options([
                         'C' => 'Completed',
                         'P' => 'Pending',
@@ -66,12 +72,13 @@ class TpesananResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('kode_pesanan')->sortable()->searchable(),
-                TextColumn::make('tanggal_pesanan')->sortable()->searchable(),
-                TextColumn::make('waktu_pesanan')->sortable()->searchable(),
-                TextColumn::make('pembeli_pesanan')->sortable()->searchable(),
-                TextColumn::make('status_pesanan')->sortable()->searchable(),
-                TextColumn::make('kode_pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('tanggal_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('waktu_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('pembeli_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('catatan_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('status_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
             ])
             ->filters([]);
     }

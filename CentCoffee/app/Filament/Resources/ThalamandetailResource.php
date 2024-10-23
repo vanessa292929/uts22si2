@@ -48,10 +48,10 @@ class ThalamandetailResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('kode_halaman_detail')->sortable()->searchable(),
-                TextColumn::make('kode_otoritas')->sortable()->searchable(),
-                TextColumn::make('kode_halaman')->sortable()->searchable(),
-                TextColumn::make('status_halaman_detil')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_halaman_detail')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_otoritas')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('status_halaman_detil')->sortable()->searchable(),
             ]);
     }
 

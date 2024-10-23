@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tpegawais', function (Blueprint $table) {
-            $table->string('kode_pegawai', 15);
-            $table->string('kata_sandi', 100);
-            $table->string('nama_pegawai', 50);
-            $table->enum('jenis_kelamin', ['L', 'P']);
-            $table->string('kode_otoritas', 15);
+            $table->char('kode_pegawai', 15)->primary();
+            $table->char('kata_sandi', 100);
+            $table->char('nama_pegawai', 50);
+            $table->enum('jenis_kelamin_pegawai', ['L', 'P']);
+            $table->char('kode_otoritas', 15);
             $table->timestamps();
 
             $table->foreign('kode_otoritas')->references('kode_otoritas')->on('totoritas');
