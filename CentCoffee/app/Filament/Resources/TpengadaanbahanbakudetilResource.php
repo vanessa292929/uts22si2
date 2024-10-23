@@ -38,7 +38,7 @@ class TpengadaanbahanbakudetilResource extends Resource
 
                     ->label('Kode Pengadaan Bahan Baku Detil'), 
 
-                Forms\Components\Select::make('kode_pengadaan_bahan_baku')
+                Forms\Components\TextInput::make('kode_pengadaan_bahan_baku')
                     
                     ->required()
                     ->label('Kode Pengadaan Bahan Baku'),
