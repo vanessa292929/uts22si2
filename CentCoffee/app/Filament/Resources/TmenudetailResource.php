@@ -17,6 +17,10 @@ class TmenudetailResource extends Resource
     protected static ?string $model = tmenuDetail::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Menu Detail'; 
+    }
     public static function getPluralModelLabel(): string
     {
         return 'Menu Detail'; 

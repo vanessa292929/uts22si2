@@ -18,6 +18,10 @@ class TkuesionerResource extends Resource
     protected static ?string $model = tkuesioner::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Kuesioner'; 
+    }
     public static function getPluralModelLabel(): string
     {
         return 'Kuesioner'; 
