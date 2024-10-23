@@ -1,5 +1,5 @@
 <?php
-
+//DONE
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,10 +11,12 @@ class tpesanandetail extends Model
     
     protected $fillable = [
         'kode_pesanan_detil', 
+        'kode_menu',
+        'kode_pesanan', 
         'jumlah_pesanan_detil', 
         'status_pesanan_detil', 
-        'kode_pesanan', 
-        'kode_menu'
+        
+        
     ];
 
     protected $primaryKey = 'kode_pesanan_detil';

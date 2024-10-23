@@ -12,10 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tkuesionerdetails', function (Blueprint $table) {
-            $table->string('kode_kuesioner_detail', 15);
-            $table->tinyInteger('poin_kuesioner');
-            $table->string('kode_kuesioner_perangkat', 15);
-            $table->string('kode_kuesioner', 15);
+            $table->char('kode_kuisioner_detil', 10)->primary();
+            $table->char('kode_kuisioner_perangkat', 10);
+            $table->char('kode_kuisioner', 10);
+            $table->tinyInteger('poin_kuisioner_detil');
+
+            $table->timestamps();
+
+            $table->foreign('kode_kuisioner_perangkat')->references('kode_kuisioner_perangkat')->on('tkuesioner_perangkats');
+            $table->foreign('kode_kuisioner')->references('kode_kuisioner')->on('tkuesioners');
+            
+        
         });
     }
 

@@ -1,5 +1,5 @@
 <?php
-
+// DONEEE
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('totoritas', function (Blueprint $table) {
-            $table->string('kode_otoritas', 15);
-            $table->string('nama_otoritas', 50);
+            $table->char('kode_otoritas',15) -> primary();
+            $table->char('nama_otoritas', 100);
+            $table->timestamps();
         });
     }
 

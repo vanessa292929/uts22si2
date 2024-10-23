@@ -10,12 +10,14 @@ class tkuesionerdetail extends Model
     use HasFactory;
     
     protected $fillable = [
-        'kode_kuesioner_detil', 
-        'poin_kuesioner', 
-        'kode_kuesioner_perangkat', 
-        'kode_kuesioner'
+        'kode_kuisioner_detil', 
+        'kode_kuisioner_perangkat', 
+        'kode_kuisioner',
+        'poin_kuisioner_detil', 
+
+
     ];
 
-    protected $primaryKey = 'kode_kuesioner_detail';
+    protected $primaryKey = 'kode_kuisioner_detail';
     public $incrementing = false;
 }

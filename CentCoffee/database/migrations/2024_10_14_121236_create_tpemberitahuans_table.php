@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tpemberitahuans', function (Blueprint $table) {
-            $table->string('kode_pemberitahuan', 15);
+            $table->char('kode_pemberitahuan', 10)->primary();
+            $table->char('kode_perangkat', 15);
             $table->text('isi_pemberitahuan');
-            $table->timestamp('tanggal_pemberitahuan');
-            $table->string('kode_pengingat', 15);
+            $table->dateTime('tanggal_pemberitahuan');
+
+            $table->foreign('kode_perangkat')->references('kode_perangkat')->on('tperangkats');
         });
     }
 

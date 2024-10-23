@@ -1,5 +1,5 @@
 <?php
-
+// DONE
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpesanandetailResource\Pages;
@@ -32,33 +32,64 @@ class TpesanandetailResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('kode_pesanan_detil')
-                    ->required(),
-                TextInput::make('jumlah_pesanan_detil')
+                Forms\Components\TextInput::make('kode_pesanan_detil')
+                    ->label('Kode Pesanan Detil')
                     ->required()
-                    ->numeric(),
-                Select::make('status_pesanan_detil')
+                    ->placeholder('Kode Pesanan Detil'),
+
+                Forms\Components\TextInput::make('kode_menu')
+                    ->label('Kode Menu')
+                    ->required()
+                    ->placeholder('Kode Menu'),
+
+                Forms\Components\TextInput::make('kode_pesanan')
+                    ->label('Kode Pesanan')
+                    ->required()
+                    ->placeholder('Kode Pesanan'),
+
+                Forms\Components\TextInput::make('jumlah_pesanan_detail')
+                    ->label('Jumlah Pesanan Detail')
+                    ->required()
+                    ->placeholder('Kode Pesanan'),
+
+                Forms\Components\Select::make('status_pesanan_detil')
+                    ->label('Status Pesanan Detail')
                     ->options([
                         'P' => 'Pending',
                         'D' => 'Delivered',
                     ])
                     ->required(),
-                TextInput::make('kode_pesanan')
-                    ->required(),
-                TextInput::make('kode_menu')
-                    ->required(),
+                
+                
+               
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-                TextColumn::make('kode_pesanan_detil')->sortable()->searchable(),
-                TextColumn::make('jumlah_pesanan_detil')->sortable()->searchable(),
-                TextColumn::make('status_pesanan_detil')->sortable()->searchable(),
-                TextColumn::make('kode_pesanan')->sortable()->searchable(),
-                TextColumn::make('kode_menu')->sortable()->searchable(),
+            ->columns([ 
+                TextColumn::make('kode_pesanan_detil')
+                    ->label('Kode Pesanan Detil')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('kode_pesanan')
+                    ->label('Kode Pesanan')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('kode_menu')
+                    ->label('Kode Menu')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('jumlah_pesanan_detil')
+                    ->label('Jumlah Pesanan Detil')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('status_pesanan_detil')
+                    ->label('Status Pesanan Detil')
+                    ->sortable()
+                    ->searchable(),
+      
             ])
             ->filters([]);
     }
