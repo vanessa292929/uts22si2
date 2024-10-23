@@ -16,8 +16,12 @@ return new class extends Migration
             $table->float('jumlah_bahan_baku_detail');
             $table->string('kode_menu', 15);
             $table->string('kode_bahan_baku', 15);
+
+            $table->foreign('kode_menu')->references('kode_menu')->on('tmenus');
+            $table->foreign('kode_bahan_baku')->references('kode_bahan_baku')->on('tbahanbakus');
         });
     }
+    
 
     /**
      * Reverse the migrations.

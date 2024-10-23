@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('kode_otoritas', 15);
             $table->string('kode_halaman', 15);
             $table->tinyInteger('status_halaman_detail', false, true)->length(1);
+
+            $table->foreign('kode_halaman_detail')->references('kode_halaman_detai')->on('thalamans');
         });
     }
 

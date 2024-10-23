@@ -18,6 +18,8 @@ return new class extends Migration
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('kode_otoritas', 15);
             $table->timestamps();
+
+            $table->foreign('kode_otoritas')->references('kode_otoritas')->on('totoritas');
         });
     }
 
