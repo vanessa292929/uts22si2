@@ -3,14 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpemberitahuanResource\Pages;
+use App\Filament\Resources\TpemberitahuanResource\RelationManagers;
 use App\Models\tpemberitahuan;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
+
 
 class TpemberitahuanResource extends Resource
 {
@@ -45,9 +45,9 @@ class TpemberitahuanResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            Tables\Columns\TextColumn::make('kode_pemberitahuan')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('isi_pemberitahuan')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('kode_pengingat')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pemberitahuan')->label('Kode Pemberitahuan')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('isi_pemberitahuan')->label('Isi Pemberitahuan')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pengingat')->label('Kode Perangkat')->sortable()->searchable(),
         ]);
     }
 

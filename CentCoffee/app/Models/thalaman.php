@@ -18,5 +18,5 @@ class thalaman extends Model
 
     protected $primaryKey = 'kode_halaman';
     public $incrementing = false;
-    public $timestamps = false;
+
 }

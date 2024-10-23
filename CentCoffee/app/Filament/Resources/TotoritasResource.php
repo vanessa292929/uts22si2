@@ -3,14 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TotoritasResource\Pages;
+use App\Filament\Resources\TotoritasResource\RelationManagers;
 use App\Models\totoritas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
+
 
 class TotoritasResource extends Resource
 {
@@ -42,8 +42,8 @@ class TotoritasResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            Tables\Columns\TextColumn::make('kode_otoritas')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('nama_otoritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_otoritas')->label('Kode Otoritas')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('nama_otoritas')->label('Nama Otoritas')->sortable()->searchable(),
         ]);
     }
 

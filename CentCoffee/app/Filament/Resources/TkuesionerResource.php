@@ -3,14 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TkuesionerResource\Pages;
+use App\Filament\Resources\TkuesionerResource\RelationManagers;
 use App\Models\tkuesioner;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\DatePicker;
 
@@ -62,13 +61,13 @@ class TkuesionerResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            Tables\Columns\TextColumn::make('kode_kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('judul_kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('isi_kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('tanggal_kuisioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('waktu_kuisioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('status_kuisioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_kuesioner')->label('Kode Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('judul_kuesioner')->label('Judul Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('isi_kuesioner')->label('Isi Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('tanggal_kuisioner')->label('Tanggal Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('waktu_kuisioner')->label('Waktu Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('status_kuisioner')->label('Status Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_pegawai')->label('Kode_pegawai')->sortable()->searchable(),
         ]);
     }
 

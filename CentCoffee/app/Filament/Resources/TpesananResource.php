@@ -3,14 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpesananResource\Pages;
+use App\Filament\Resources\TpesananResource\RelationManagers;
 use App\Models\tpesanan;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 
 class TpesananResource extends Resource
@@ -33,25 +32,40 @@ class TpesananResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('kode_pesanan')
+                ->label('Kode Pesanan')
                     ->required(),
+
                     Forms\Components\DatePicker::make('tanggal_pesanan')
+                    ->label('Tanggal Pesanan')
                     ->required()
                     ->displayFormat('d/m/Y'),
+
                     Forms\Components\TimePicker::make('waktu_pesanan')
+                    ->label('Waktu Pesanan')
                     ->required()
                     ->displayFormat('h:i A'),
+
                     Forms\Components\TextInput::make('pembeli_pesanan')
+                    ->label('Pembeli Pesanan')
                     ->required()
                     ->maxLength(50),
+
                     Forms\Components\TextInput::make('catatan_pesanan')
+                    ->label('Catatan Pesanan')
                     ->nullable(),
+
                     Forms\Components\TextInput::make('harga_pesanan')
+                    ->label('Harga Pesanan')
                     ->required()
                     ->maxLength(50),
+
                     Forms\Components\TextInput::make('tunai_pesanan')
+                    ->label('Tunai Pesanan')
                     ->required()
                     ->maxLength(50),
+
                     Forms\Components\Select::make('status_pesanan')
+                    ->label('Status Pesanan')
                     ->options([
                         'C' => 'Completed',
                         'P' => 'Pending',
@@ -59,10 +73,12 @@ class TpesananResource extends Resource
                         'D' => 'Delivered',
                     ])
                     ->required(),
-                TextInput::make('kode_pegawai')
+                    Forms\Components\TextInput::make('kode_pegawai')
+                    ->label('Kode Pegawai')
                     ->required()
                     ->maxLength(15),
-                TextInput::make('kode_perangkat')
+                    Forms\Components\TextInput::make('kode_perangkat')
+                    ->label('Kode Perangkat')
                     ->required()
                     ->maxLength(15),
             ]);

@@ -3,15 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TprioritasResource\Pages;
+use App\Filament\Resources\TprioritasResource\RelationManagers;
 use App\Models\tprioritas;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
-
 class TprioritasResource extends Resource
 {
     protected static ?string $model = tprioritas::class;
@@ -51,7 +49,7 @@ class TprioritasResource extends Resource
     {
         return [
             'index' => Pages\ListTprioritas::route('/'),
-            'create' => Pages\CreateTprioritas::route('/create'),
+           'create' => Pages\CreateTprioritas::route('/create'),
             'edit' => Pages\EditTprioritas::route('/{record}/edit'),
         ];
     }

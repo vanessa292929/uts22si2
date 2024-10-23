@@ -3,13 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TmenuResource\Pages;
+use App\Filament\Resources\TmenuResource\RelationManagers;
 use App\Models\tmenu;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
+
 
 class TmenuResource extends Resource
 {
@@ -56,12 +57,12 @@ class TmenuResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kode_menu')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('nama_menu')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('jenis_menu')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('harga_menu')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('deskripsi_menu')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_menu')->label('Kode Menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nama_menu')->label('Nama Menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('jenis_menu')->label('Jenis Menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('harga_menu')->label('Harga Menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('deskripsi_menu')->label('Deskripsi Menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_pegawai')->label('Kode Pegawai')->sortable()->searchable(),
             ]);
     }
 

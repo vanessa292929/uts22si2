@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TkuesionerperangkatResource\Pages;
+use App\Filament\Resources\TkuesionerperangkatResource\RelationManagers;
 use App\Models\tkuesionerperangkat;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs\Tab;
@@ -10,8 +11,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
+
 
 class TkuesionerperangkatResource extends Resource
 {

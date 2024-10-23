@@ -3,14 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TkuesionerdetailResource\Pages;
+use App\Filament\Resources\TkuesionerdetailResource\RelationManagers;
 use App\Models\tkuesionerDetail;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
+
 
 class TkuesionerdetailResource extends Resource
 {
@@ -30,14 +30,17 @@ class TkuesionerdetailResource extends Resource
                     ->label('Kode Kuisioner Detil')
                     ->required()
                     ->maxLength(10),
+
                 Forms\Components\TextInput::make('kode_kuisioner_perangkat')
                     ->label('Kode Kuisioner Perangkat')
                     ->required()
                     ->maxLength(10),
+
                 Forms\Components\TextInput::make('kode_kuisioner')
                     ->label('Kode Kuisioner')
                     ->required()
                     ->maxLength(10),
+
                 Forms\Components\TextInput::make('poin_kuisioner_detil')
                     ->label('Poin Kuisioner Detil')
                     ->numeric()

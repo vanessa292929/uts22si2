@@ -3,14 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TmenudetailResource\Pages;
+use App\Filament\Resources\TmenudetailResource\RelationManagers;
 use App\Models\tmenuDetail;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
+
 
 class TmenudetailResource extends Resource
 {
@@ -42,10 +42,10 @@ class TmenudetailResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kode_menu_detail')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('jumlah_bahan_baku_detail')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('kode_menu')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('kode_bahan_baku')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_menu_detail')->label('Kode Menu Detail')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('jumlah_bahan_baku_detail')->label('Jumlah Bahan Baku Detail')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_menu')->label('Kode Menu')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_bahan_baku')->label('Kode Bahan Baku')->sortable()->searchable(),
             ])
             ->filters([]);
     }

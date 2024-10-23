@@ -3,14 +3,13 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TpegawaiResource\Pages;
+use App\Filament\Resources\TpegawaiResource\RelationManagers;
 use App\Models\tpegawai;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 
 class TpegawaiResource extends Resource
@@ -57,11 +56,11 @@ class TpegawaiResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('nama_pegawai')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('kata_sandi')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('jenis_kelamin_pegawai')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('kode_otoritas')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_pegawai')->label('Kode Pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nama_pegawai')->label('Nama Pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kata_sandi')->label('Kata Sandi')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('jenis_kelamin_pegawai')->label('Jenis Kelamin Pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_otoritas')->label('Kode Otoritas')->sortable()->searchable(),
             ])
             ->filters([]);
     }

@@ -3,13 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ThalamenResource\Pages;
+use App\Filament\Resources\ThalamanResource\RelationManagers;
 use App\Models\Thalaman;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
+
 
 class ThalamanResource extends Resource
 {
@@ -49,10 +50,10 @@ class ThalamanResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('kode_halaman')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('nama_halaman')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('ikon_halaman')->sortable()->searchable(),
-                Tables\Columns\TextColumn::make('urutan_halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_halaman')->label('Kode Halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('nama_halaman')->label('Nama Halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('ikon_halaman')->label('Ikon Halaman')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('urutan_halaman')->label('Urutan Halaman')->sortable()->searchable(),
             ]);
     }
 
