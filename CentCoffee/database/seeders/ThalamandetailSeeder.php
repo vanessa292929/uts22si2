@@ -2,22 +2,107 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
-use DB;
+use App\Models\thalamandetail;
 
 class ThalamandetailSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
-        $faker = Faker::create('id_ID');
-        for ($i = 1; $i <= 50; $i++) {
-            DB::table('halaman_detail')->insert([
-                'kode_halaman_detail' => $i,
-                'kode_otoritas' => 'OT' . str_pad($faker->numberBetween(1, 10), 3, '0', STR_PAD_LEFT),
-                'kode_halaman' => 'HL' . str_pad($faker->numberBetween(1, 50), 3, '0', STR_PAD_LEFT),
-                'status_halaman_detail' => $faker->numberBetween(0, 1),
-            ]);
+        $halamanDetailData = [
+            // Dashboard - accessible by all roles
+            [
+                'kode_halaman_detail' => 'HD001',
+                'kode_otoritas' => 'OT001', // Administrator
+                'kode_halaman' => 'HLM001',
+                'status_halaman_detail' => 1, // Active
+            ],
+            [
+                'kode_halaman_detail' => 'HD002',
+                'kode_otoritas' => 'OT002', // Manajer
+                'kode_halaman' => 'HLM001',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD003',
+                'kode_otoritas' => 'OT003', // Kasir
+                'kode_halaman' => 'HLM001',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD004',
+                'kode_otoritas' => 'OT004', // Koki
+                'kode_halaman' => 'HLM001',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD005',
+                'kode_otoritas' => 'OT005', // Pelayan
+                'kode_halaman' => 'HLM001',
+                'status_halaman_detail' => 1, 
+            ],
+
+            // Menu - accessible by all roles
+            // ... (similar entries for HLM002 as above)
+
+            // Pesanan - accessible by all except Koki
+            [
+                'kode_halaman_detail' => 'HD011', 
+                'kode_otoritas' => 'OT001', // Administrator
+                'kode_halaman' => 'HLM003',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD012',
+                'kode_otoritas' => 'OT002', // Manajer
+                'kode_halaman' => 'HLM003',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD013',
+                'kode_otoritas' => 'OT003', // Kasir
+                'kode_halaman' => 'HLM003',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD014',
+                'kode_otoritas' => 'OT005', // Pelayan
+                'kode_halaman' => 'HLM003',
+                'status_halaman_detail' => 1, 
+            ],
+
+            // Bahan Baku - accessible by Administrator and Manajer only
+            [
+                'kode_halaman_detail' => 'HD015',
+                'kode_otoritas' => 'OT001', // Administrator
+                'kode_halaman' => 'HLM004',
+                'status_halaman_detail' => 1, 
+            ],
+            [
+                'kode_halaman_detail' => 'HD016',
+                'kode_otoritas' => 'OT002', // Manajer
+                'kode_halaman' => 'HLM004',
+                'status_halaman_detail' => 1, 
+            ],
+
+            // Pegawai - accessible by Administrator only
+            [
+                'kode_halaman_detail' => 'HD017',
+                'kode_otoritas' => 'OT001', // Administrator
+                'kode_halaman' => 'HLM005',
+                'status_halaman_detail' => 1, 
+            ],
+
+            // Laporan - accessible by Administrator and Manajer only
+            // ... (similar entries for HLM006 as Bahan Baku)
+        ];
+
+        foreach ($halamanDetailData as $halamanDetail) {
+            Thalamandetail::create($halamanDetail);
         }
     }
 }

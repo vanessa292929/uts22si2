@@ -2,23 +2,58 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
-use DB;
+use App\Models\tpegawai;
+use Illuminate\Support\Facades\Hash;
 
 class TpegawaiSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
-        $faker = Faker::create('id_ID');
-        for ($i = 1; $i <= 50; $i++) {
-            DB::table('pegawai')->insert([
-                'kode_pegawai' => 'PG' . str_pad($i, 3, '0', STR_PAD_LEFT),
-                'kata_sandi' => bcrypt('password'),
-                'nama_pegawai' => $faker->name,
-                'jenis_kelamin' => $faker->randomElement(['L', 'P']),
-                'kode_otoritas' => 'OT' . str_pad($faker->numberBetween(1, 10), 3, '0', STR_PAD_LEFT),
-            ]);
+        $pegawaiData = [
+            [
+                'kode_pegawai' => 'PG001',
+                'kata_sandi' => 'admin123', 
+                'nama_pegawai' => 'John Doe',
+                'jenis_kelamin_pegawai' => 'L',
+                'kode_otoritas' => 'OT001', // Administrator
+            ],
+            [
+                'kode_pegawai' => 'PG002',
+                'kata_sandi' => 'manager456',
+                'nama_pegawai' => 'Jane Smith',
+                'jenis_kelamin_pegawai' => 'P',
+                'kode_otoritas' => 'OT002', // Manajer
+            ],
+            [
+                'kode_pegawai' => 'PG003',
+                'kata_sandi' => 'kasir789',
+                'nama_pegawai' => 'David Lee',
+                'jenis_kelamin_pegawai' => 'L',
+                'kode_otoritas' => 'OT003', // Kasir
+            ],
+            [
+                'kode_pegawai' => 'PG004',
+                'kata_sandi' => 'koki101',
+                'nama_pegawai' => 'Sarah Chen',
+                'jenis_kelamin_pegawai' => 'P',
+                'kode_otoritas' => 'OT004', // Koki
+            ],
+            [
+                'kode_pegawai' => 'PG005',
+                'kata_sandi' => 'pelayan112',
+                'nama_pegawai' => 'Michael Kim',
+                'jenis_kelamin_pegawai' => 'L',
+                'kode_otoritas' => 'OT005', // Pelayan
+            ],
+        ];
+
+        foreach ($pegawaiData as $pegawai) {
+            Tpegawai::create($pegawai);
         }
     }
 }

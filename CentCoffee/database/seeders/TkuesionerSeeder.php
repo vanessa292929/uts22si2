@@ -2,25 +2,41 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
-use Illuminate\Support\Facades\DB;
+use App\Models\tkuesioner;
+use Carbon\Carbon;
 
 class TkuesionerSeeder extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
-        $faker = Faker::create('id_ID');
-        for ($i = 1; $i <= 20; $i++) {
-            DB::table('kuesioner')->insert([
-                'kode_kuesioner' => $faker->unique()->numerify('K##'),
-                'judul_kuesioner' => $faker->sentence(4),
-                'isi_kuesioner' => $faker->paragraph(),
-                'tanggal_kuesioner' => $faker->date(),
-                'waktu_kuesioner' => $faker->time(),
-                'status_kuesioner' => $faker->boolean(),
-                'kode_pegawai' => 'PG001',
-            ]);
+        $kuesionerData = [
+            [
+                'kode_kuisioner' => 'K001',
+                'judul_kuisioner' => 'Kepuasan Pelanggan',
+                'isi_kuisioner' => 'Bagaimana penilaian Anda terhadap pelayanan kami?',
+                'tanggal_kuisioner' => Carbon::now()->subDays(7),
+                'waktu_kuisioner' => '14:30:00',
+                'status_kuisioner' => 1, // Active
+                'kode_pegawai' => 'PG002', // Manajer Jane Smith
+            ],
+            [
+                'kode_kuisioner' => 'K002',
+                'judul_kuisioner' => 'Evaluasi Menu',
+                'isi_kuisioner' => 'Berikan masukan Anda tentang menu kami.',
+                'tanggal_kuisioner' => Carbon::now()->subMonth(),
+                'waktu_kuisioner' => '10:00:00',
+                'status_kuisioner' => 0, // Inactive
+                'kode_pegawai' => 'PG002', // Manajer Jane Smith
+            ],
+        ];
+
+        foreach ($kuesionerData as $kuesioner) {
+            Tkuesioner::create($kuesioner);
         }
     }
 }
