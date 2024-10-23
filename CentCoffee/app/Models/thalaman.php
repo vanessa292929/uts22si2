@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class thalaman extends Model
 {
+    protected $table = 'thalamans';
     use HasFactory;
     
     protected $fillable = [

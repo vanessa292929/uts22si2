@@ -10,15 +10,15 @@ class tpesanandetail extends Model
     use HasFactory;
     
     protected $fillable = [
-        'kode_pesanan_detil', 
+        'kode_pesanan_detail', 
         'kode_menu',
         'kode_pesanan', 
-        'jumlah_pesanan_detil', 
-        'status_pesanan_detil', 
+        'jumlah_pesanan_detail', 
+        'status_pesanan_detail', 
         
         
     ];
 
-    protected $primaryKey = 'kode_pesanan_detil';
+    protected $primaryKey = 'kode_pesanan_detail';
     public $incrementing = false;
 }

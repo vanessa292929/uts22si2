@@ -16,7 +16,7 @@ class tpesanan extends Model
         'pembeli_pesanan', 
         'catatan_pesanan', 
         'harga_pesanan',
-        'tunai_pesanan',
+        'tunai_pesananan',
         'status_pesanan', 
         'kode_pegawai', 
         'kode_perangkat'

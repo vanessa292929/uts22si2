@@ -36,9 +36,9 @@ class TpemberitahuanResource extends Resource
                 Forms\Components\TextInput::make('isi_pemberitahuan')
                 ->required()
                 ->label('Isi Pemberitahuan'),
-                Forms\Components\TextInput::make('kode_pengingat')
+                Forms\Components\TextInput::make('kode_perangkat')
                 ->required()
-                ->label('Kode Pengingat'),
+                ->label('Kode Perangkat'),
         ]);
     }
 
@@ -47,8 +47,15 @@ class TpemberitahuanResource extends Resource
         return $table->columns([
             Tables\Columns\TextColumn::make('kode_pemberitahuan')->label('Kode Pemberitahuan')->sortable()->searchable(),
             Tables\Columns\TextColumn::make('isi_pemberitahuan')->label('Isi Pemberitahuan')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('kode_pengingat')->label('Kode Perangkat')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_perangkat')->label('Kode Perangkat')->sortable()->searchable(),
         ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array

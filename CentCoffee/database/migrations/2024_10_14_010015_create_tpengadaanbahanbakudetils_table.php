@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tpengadaanbahanbakudetils', function (Blueprint $table) {
             $table->char('kode_pengadaan_bahan_baku_detil')->primary();
-            $table->int('kode_pengadaan_bahan_baku');
+            $table->char('kode_pengadaan_bahan_baku');
             $table->char('nama_bahan_baku', length:50);
             $table->char('nama_supplier', length:50);
             $table->float('jumlah_bahan_baku');

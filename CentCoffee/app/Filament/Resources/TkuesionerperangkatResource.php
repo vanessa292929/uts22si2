@@ -1,9 +1,8 @@
 <?php
 //DONE
 namespace App\Filament\Resources;
-
-use App\Filament\Resources\TkuesionerperangkatResource\Pages;
 use App\Filament\Resources\TkuesionerperangkatResource\RelationManagers;
+use App\Filament\Resources\TkuesionerperangkatResource\Pages;
 use App\Models\tkuesionerperangkat;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs\Tab;
@@ -11,7 +10,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables;
-
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
 
 class TkuesionerperangkatResource extends Resource
 {
@@ -44,23 +44,22 @@ class TkuesionerperangkatResource extends Resource
                 ->required()
                 ->label('Pesan Kuisioner Perangkat'),
             
-            Forms\Components\DateTimePicker::make('tanggal_kuisioner_perangkat')
+            Forms\Components\DatePicker::make('tanggal_kuisioner_perangkat')
                 ->required()
                 ->displayFormat('Y-m-d')
                 ->label('Tanggal Kuisioner Perangkat'),
             
-            Forms\Components\DateTimePicker::make('waktu_kuisioner_perangkat')
+            Forms\Components\TimePicker::make('waktu_kuisioner_perangkat')
                 ->required()
                 ->seconds(false)
                 ->displayFormat('H:i')
                 ->label('Waktu Kuisioner Perangkat'),
             
-            Forms\Components\Toggle::make('status_kuesioner_perangkat')
-                ->label('Active')
-                ->onIcon('heroicon-s-check')
-                ->offIcon('heroicon-s-x')
+                Forms\Components\Toggle::make('status_kuisioner_perangkat')
+                ->label('Status Kuesioner Perangkat')
+                ->onIcon('heroicon-o-check-circle') // Changed to a valid Heroicons v1 icon
+                ->offIcon('heroicon-o-x-circle') // Changed to a valid Heroicons v1 icon
                 ->required()
-
             
         ]);
     }
@@ -92,15 +91,24 @@ class TkuesionerperangkatResource extends Resource
                     ->searchable()
                     ->label('Waktu Kuisioner Perangkat'),
 
-            Tables\Columns\TextColumn::make('status_kuisioner_perangkat')
-                    ->searchable()
-                    ->label('Status Kuisioner Perangkat'),
-
-            Tables\Columns\IconColumn::make('status_kuesioner_perangkat')
+            Tables\Columns\IconColumn::make('status_kuisioner_perangkat')
+                    ->label('Status')
                     ->boolean()
+                    ->trueIcon('heroicon-o-check-circle')
+                    ->trueColor('success')
+                    ->falseIcon('heroicon-o-x-circle')
+                    ->falseColor('danger'),
 
             
         ]);
+    }
+
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array

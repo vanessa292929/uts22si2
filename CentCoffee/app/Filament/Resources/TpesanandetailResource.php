@@ -31,10 +31,10 @@ class TpesanandetailResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('kode_pesanan_detil')
+                Forms\Components\TextInput::make('kode_pesanan_detail')
                     ->label('Kode Pesanan Detil')
                     ->required()
-                    ->placeholder('Kode Pesanan Detil'),
+                    ->placeholder('Kode Pesanan Detail'),
 
                 Forms\Components\TextInput::make('kode_menu')
                     ->label('Kode Menu')
@@ -51,7 +51,7 @@ class TpesanandetailResource extends Resource
                     ->required()
                     ->placeholder('Kode Pesanan'),
 
-                Forms\Components\Select::make('status_pesanan_detil')
+                Forms\Components\Select::make('status_pesanan_detail')
                     ->label('Status Pesanan Detail')
                     ->options([
                         'P' => 'Pending',
@@ -68,23 +68,23 @@ class TpesanandetailResource extends Resource
     {
         return $table
             ->columns([ 
-                Tables\Columns\TextColumn::make('kode_pesanan_detil')
+                Tables\Columns\TextColumn::make('kode_pesanan_detail')
                     ->label('Kode Pesanan Detil')
-                    ->sortable()
-                    ->searchable(),
-                    Tables\Columns\TextColumn::make('kode_pesanan')
-                    ->label('Kode Pesanan')
                     ->sortable()
                     ->searchable(),
                     Tables\Columns\TextColumn::make('kode_menu')
                     ->label('Kode Menu')
                     ->sortable()
                     ->searchable(),
-                    Tables\Columns\TextColumn::make('jumlah_pesanan_detil')
+                    Tables\Columns\TextColumn::make('kode_pesanan')
+                    ->label('Kode Pesanan')
+                    ->sortable()
+                    ->searchable(),
+                    Tables\Columns\TextColumn::make('jumlah_pesanan_detail')
                     ->label('Jumlah Pesanan Detil')
                     ->sortable()
                     ->searchable(),
-                    Tables\Columns\TextColumn::make('status_pesanan_detil')
+                    Tables\Columns\TextColumn::make('status_pesanan_detail')
                     ->label('Status Pesanan Detil')
                     ->sortable()
                     ->searchable(),

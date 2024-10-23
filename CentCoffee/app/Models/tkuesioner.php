@@ -10,16 +10,16 @@ class tkuesioner extends Model
     use HasFactory;
     
     protected $fillable = [
-        'kode_kuesioner', 
-        'judul_kuesioner', 
-        'isi_kuesioner', 
-        'tanggal_kuesioner', 
-        'waktu_kuesioner', 
-        'status_kuesioner', 
+        'kode_kuisioner', 
+        'judul_kuisioner', 
+        'isi_kuisioner', 
+        'tanggal_kuisioner', 
+        'waktu_kuisioner', 
+        'status_kuisioner', 
         'kode_pegawai'
     ];
 
-    protected $primaryKey = 'kode_kuesioner';
+    protected $primaryKey = 'kode_kuisioner';
     public $incrementing = false;
     public $timestamps = false;
 }

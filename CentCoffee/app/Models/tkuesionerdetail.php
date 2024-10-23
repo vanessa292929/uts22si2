@@ -18,6 +18,6 @@ class tkuesionerdetail extends Model
 
     ];
 
-    protected $primaryKey = 'kode_kuisioner_detail';
+    protected $primaryKey = 'kode_kuisioner_detil';
     public $incrementing = false;
 }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('isi_kuisioner');
             $table->date('tanggal_kuisioner');
             $table->time('waktu_kuisioner');
-            $table->boolean('status_kuisioner');
+            $table->tinyInteger('status_kuisioner')->default('1');
             $table->char('kode_pegawai', 15);
 
 

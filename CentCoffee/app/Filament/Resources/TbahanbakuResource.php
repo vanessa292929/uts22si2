@@ -44,7 +44,7 @@ class TbahanbakuResource extends Resource
                     ->label('Satuan Bahan Baku')
                     ->required()
                     ->maxLength(10),
-                Forms\Components\TextInput::make('tanggal_kadaluarsa_bahan_baku')
+                Forms\Components\DateTimePicker::make('tanggal_kadaluarsa_bahan_baku')
                     ->label('Tanggal Kadaluarsa Bahan Baku')
                     ->required()
                     ->date(),
@@ -61,6 +61,12 @@ class TbahanbakuResource extends Resource
                 Tables\Columns\TextColumn::make('satuan_bahan_baku')->label('Satuan Bahan Baku')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('tanggal_kadaluarsa_bahan_baku')->label('Tanggal Kadaluarsa Bahan Baku')->sortable()->searchable(),
             ]);
+    }
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array

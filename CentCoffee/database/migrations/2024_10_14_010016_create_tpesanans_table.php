@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('catatan_pesanan');
             $table->integer('harga_pesanan');
             $table->integer('tunai_pesananan');
-            $table->enum('status_pesanan', ['C', 'P', 'T', 'D']);
+            $table->enum('status_pesanan', ['P','D']);
             $table->char('kode_pegawai', 15);
             $table->char('kode_perangkat', 15);
 

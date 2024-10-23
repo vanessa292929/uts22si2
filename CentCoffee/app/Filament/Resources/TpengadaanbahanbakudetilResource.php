@@ -19,11 +19,49 @@ class TpengadaanbahanbakudetilResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getModelLabel(): string
+    {
+        return 'Pengadaan BahanBaku Detil';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'Pengadaan BahanBaku Detil';
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('kode_pengadaan_bahan_baku_detil')
+                    ->required()
+
+                    ->label('Kode Pengadaan Bahan Baku Detil'), 
+
+                Forms\Components\Select::make('kode_pengadaan_bahan_baku')
+                    
+                    ->required()
+                    ->label('Kode Pengadaan Bahan Baku'),
+
+                Forms\Components\TextInput::make('nama_bahan_baku')
+                    ->required()
+                    ->maxLength(50)
+                    ->label('Nama Bahan Baku'),
+
+                Forms\Components\TextInput::make('nama_supplier')
+                    ->required()
+                    ->maxLength(50)
+                    ->label('Nama Supplier'),
+
+                Forms\Components\TextInput::make('jumlah_bahan_baku')
+                    ->required()
+
+                    ->label('Jumlah Bahan Baku'),
+
+                Forms\Components\TextInput::make('satuan_bahan_baku')
+                    ->required()
+                    ->maxLength(10)
+                    ->label('Satuan Bahan Baku'),
             ]);
     }
 
@@ -31,47 +69,6 @@ class TpengadaanbahanbakudetilResource extends Resource
     {
         return $table
             ->columns([
-                Forms\Components\TextInput::make('kode_pengadaan_bahan_baku_detil')
-                    ->required()
-                    ->numeric()
-                    ->label('Kode Pengadaan Bahan Baku Detil'), 
-                Forms\Components\Select::make('kode_pengadaan_bahan_baku')
-                    ->relationship('tpengadaanbahanbaku', 'kode_pengadaan_bahan_baku') // Assuming the relationship name is 'tpengadaanbahanbaku'
-                    ->required()
-                    ->label('Kode Pengadaan Bahan Baku'),
-                Forms\Components\TextInput::make('nama_bahan_baku')
-                    ->required()
-                    ->maxLength(50)
-                    ->label('Nama Bahan Baku'),
-                Forms\Components\TextInput::make('nama_supplier')
-                    ->required()
-                    ->maxLength(50)
-                    ->label('Nama Supplier'),
-                Forms\Components\TextInput::make('jumlah_bahan_baku')
-                    ->required()
-                    ->numeric()
-                    ->label('Jumlah Bahan Baku'),
-                Forms\Components\TextInput::make('satuan_bahan_baku')
-                    ->required()
-                    ->maxLength(10)
-                    ->label('Satuan Bahan Baku'),
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
                 Tables\Columns\TextColumn::make('kode_pengadaan_bahan_baku_detil')
                     ->searchable()
                     ->sortable()
@@ -96,6 +93,13 @@ class TpengadaanbahanbakudetilResource extends Resource
                     ->searchable()
                     ->sortable()
                     ->label('Satuan Bahan Baku'),
+            ]);
+        }
+
+    public static function getRelations(): array
+    {
+        return [
+                
         ];
     }
 

@@ -41,7 +41,7 @@ class TpengadaanbahanbakuResource extends Resource
                 ->required()
                 ->label('Subjek'),
 
-                Forms\Components\DateTimePicker::make('tanggal_pengadaan_bahan_baku')
+                Forms\Components\DatePicker::make('tanggal_pengadaan_bahan_baku')
                 ->required()
                 ->label('Tanggal Pengadaan Bahan Baku')
                 ->displayFormat('d/m/Y'),

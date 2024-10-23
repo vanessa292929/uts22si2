@@ -18,7 +18,7 @@ return new class extends Migration
             $table->tinyInteger('status_halaman_detail', false, true)->length(1);
             $table->timestamps();
 
-            $table->foreign('kode_halaman_detail')->references('kode_halaman_detai')->on('thalamans');
+            $table->foreign('kode_halaman')->references('kode_halaman')->on('thalamans');
             $table->foreign('kode_otoritas')->references('kode_otoritas')->on('totoritas');
         });
     }

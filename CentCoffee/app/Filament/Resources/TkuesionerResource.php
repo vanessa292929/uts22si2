@@ -30,29 +30,32 @@ class TkuesionerResource extends Resource
                 ->required()
                 ->label('Kode Kuesioner'),
 
-                Forms\Components\TextInput::make('judul_kuisioner')
+            Forms\Components\TextInput::make('judul_kuisioner')
                 ->required()
                 ->label('Judul Kuesioner'),
 
-                Forms\Components\TextInput::make('isi_kuisioner')
+            Forms\Components\TextInput::make('isi_kuisioner')
                 ->required()
                 ->label('Isi Kuesioner'),
-            
-           Forms\Components\DatePicker::make('tanggal_kuisioner')
+
+            Forms\Components\DatePicker::make('tanggal_kuisioner')
                 ->required()
                 ->label('Tanggal Kuesioner')
                 ->displayFormat('d/m/Y'),
 
-                Forms\Components\TimePicker::make('waktu_kuisioner')
+            Forms\Components\TimePicker::make('waktu_kuisioner')
                 ->required()
                 ->label('Waktu Kuesioner')
                 ->displayFormat('h:i A'),
 
-                Forms\Components\TextInput::make('status_kuisioner')
-                ->required()
-                ->label('Status Kuesioner'),
+                            
+            Forms\Components\Toggle::make('status_kuisioner')
+                ->label('Status Kuisioner')
+                ->onIcon('heroicon-s-check') // This is a valid Heroicons v1 icon
+                ->offIcon('heroicon-o-x-circle') // Use a valid icon here
+                ->required(),
 
-                Forms\Components\TextInput::make('kode_pegawai')
+            Forms\Components\TextInput::make('kode_pegawai')
                 ->required()
                 ->label('Kode Pegawai'),
         ]);
@@ -61,14 +64,26 @@ class TkuesionerResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-            Tables\Columns\TextColumn::make('kode_kuesioner')->label('Kode Kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('judul_kuesioner')->label('Judul Kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('isi_kuesioner')->label('Isi Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('kode_kuisioner')->label('Kode Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('judul_kuisioner')->label('Judul Kuesioner')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('isi_kuisioner')->label('Isi Kuesioner')->sortable()->searchable(),
             Tables\Columns\TextColumn::make('tanggal_kuisioner')->label('Tanggal Kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('waktu_kuisioner')->label('Waktu Kuesioner')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('status_kuisioner')->label('Status Kuesioner')->sortable()->searchable(),
+            Tables\Columns\IconColumn::make('status_kuisioner')
+                ->label('Status')
+                ->boolean()
+                ->trueIcon('heroicon-o-check-circle')
+                ->trueColor('success')
+                ->falseIcon('heroicon-o-x-circle')
+                ->falseColor('danger'),
             Tables\Columns\TextColumn::make('kode_pegawai')->label('Kode_pegawai')->sortable()->searchable(),
         ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array

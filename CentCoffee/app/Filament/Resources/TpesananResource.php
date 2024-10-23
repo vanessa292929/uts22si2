@@ -59,7 +59,7 @@ class TpesananResource extends Resource
                     ->required()
                     ->maxLength(50),
 
-                    Forms\Components\TextInput::make('tunai_pesanan')
+                    Forms\Components\TextInput::make('tunai_pesananan')
                     ->label('Tunai Pesanan')
                     ->required()
                     ->maxLength(50),
@@ -67,9 +67,9 @@ class TpesananResource extends Resource
                     Forms\Components\Select::make('status_pesanan')
                     ->label('Status Pesanan')
                     ->options([
-                        'C' => 'Completed',
+                    //    'C' => 'Completed',
                         'P' => 'Pending',
-                        'T' => 'Taken',
+                      //  'T' => 'Taken',
                         'D' => 'Delivered',
                     ])
                     ->required(),
@@ -93,8 +93,13 @@ class TpesananResource extends Resource
                 Tables\Columns\TextColumn::make('waktu_pesanan')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('pembeli_pesanan')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('catatan_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('harga_pesanan')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('tunai_pesananan')->sortable()->searchable()
+                ->label('Tunai Pesanan'),
+
                 Tables\Columns\TextColumn::make('status_pesanan')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('kode_pegawai')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('kode_perangkat')->sortable()->searchable(),
             ])
             ->filters([]);
     }

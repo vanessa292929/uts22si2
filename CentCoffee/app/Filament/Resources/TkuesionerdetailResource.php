@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Filament\Resources;
-
-use App\Filament\Resources\TkuesionerdetailResource\Pages;
 use App\Filament\Resources\TkuesionerdetailResource\RelationManagers;
-use App\Models\tkuesionerDetail;
+use App\Filament\Resources\TkuesionerdetailResource\Pages;
+
+use App\Models\tkuesionerdetail;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -70,6 +70,13 @@ class TkuesionerdetailResource extends Resource
             ->searchable()
             ->sortable(),
         ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array

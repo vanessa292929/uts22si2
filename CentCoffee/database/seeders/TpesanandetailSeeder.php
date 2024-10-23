@@ -2,23 +2,53 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
-use DB;
+use App\Models\tpesanandetail;
 
 class TpesanandetailSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
-        $faker = Faker::create('id_ID');
-        for ($i = 1; $i <= 50; $i++) {
-            DB::table('pesanan_detail')->insert([
-                'kode_pesanan_detil' => $i,
-                'jumlah_pesanan_detil' => $faker->numberBetween(1, 10),
-                'status_pesanan_detil' => $faker->randomElement(['P', 'D']),
-                'kode_pesanan' => $faker->numberBetween(1, 50),
-                'kode_menu' => $faker->numberBetween(1, 50),
-            ]);
+        $pesananDetailData = [
+            // Pesanan Rani (PSN001)
+            [
+                'kode_pesanan_detail' => 'PD001',
+                'kode_menu' => 'MN001', // Nasi Goreng Spesial
+                'kode_pesanan' => 'PSN001',
+                'jumlah_pesanan_detail' => 2,
+                'status_pesanan_detail' => 'D', // Delivered
+            ],
+            [
+                'kode_pesanan_detail' => 'PD002',
+                'kode_menu' => 'MN003', // Es Teh Manis
+                'kode_pesanan' => 'PSN001',
+                'jumlah_pesanan_detail' => 1,
+                'status_pesanan_detail' => 'D', // Delivered
+            ],
+
+            // Pesanan Rudi (PSN002)
+            [
+                'kode_pesanan_detail' => 'PD003',
+                'kode_menu' => 'MN002', // Mie Goreng Jawa
+                'kode_pesanan' => 'PSN002',
+                'jumlah_pesanan_detail' => 1,
+                'status_pesanan_detail' => 'P', // Pending
+            ],
+            [
+                'kode_pesanan_detail' => 'PD004',
+                'kode_menu' => 'MN004', // Jus Alpukat
+                'kode_pesanan' => 'PSN002',
+                'jumlah_pesanan_detail' => 2,
+                'status_pesanan_detail' => 'P', // Pending
+            ],
+        ];
+
+        foreach ($pesananDetailData as $pesananDetail) {
+            Tpesanandetail::create($pesananDetail);
         }
     }
 }

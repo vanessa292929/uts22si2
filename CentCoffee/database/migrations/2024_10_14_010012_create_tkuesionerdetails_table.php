@@ -19,7 +19,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('kode_kuisioner_perangkat')->references('kode_kuisioner_perangkat')->on('tkuesioner_perangkats');
+            $table->foreign('kode_kuisioner_perangkat')->references('kode_kuisioner_perangkat')->on('tkuesionerperangkats');
             $table->foreign('kode_kuisioner')->references('kode_kuisioner')->on('tkuesioners');
             
         

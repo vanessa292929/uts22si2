@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Filament\Resources;
-
-use App\Filament\Resources\ThalamenResource\Pages;
 use App\Filament\Resources\ThalamanResource\RelationManagers;
+use App\Filament\Resources\ThalamanResource\Pages;
+
 use App\Models\Thalaman;
 use Filament\Forms;
 use Filament\Tables;
@@ -55,6 +55,13 @@ class ThalamanResource extends Resource
                 Tables\Columns\TextColumn::make('ikon_halaman')->label('Ikon Halaman')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('urutan_halaman')->label('Urutan Halaman')->sortable()->searchable(),
             ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array
