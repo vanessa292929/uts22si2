@@ -20,6 +20,9 @@ return new class extends Migration
             $table->enum('status_pesanan', ['C', 'P', 'T', 'D']);
             $table->string('kode_pegawai', 15);
             $table->string('kode_perangkat', 15);
+
+            $table->foreign('kode_pegawai')->references('kode_pegawai')->on('tpegawais');
+            $table->foreign('kode_perangkat')->references('kode_perangkat')->on('tperangkats');
         });
     }
 

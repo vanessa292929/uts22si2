@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('kode_prioritas', 15);
             $table->string('kode_pegawai', 15);
             $table->timestamps();
+
+            $table->foreign('kode_prioritas')->references('kode_prioritas')->on('tprioritas');
         });
     }
 
